@@ -1,0 +1,24 @@
+fun main(){
+
+    val list:List<String?> = listOf("hellO wOrlD", null, "fRom", null, "kOtlin")
+    print(list.capitalize())
+
+}
+
+fun List<String?>.capitalize():List<String>{
+
+    val list: MutableList<String> = mutableListOf()
+
+    for(i in indices){
+        if(this[i]!=null){
+            // split will form a List<String> after splitting the word according to the spaces present in the sentence
+            // map is used to take each word/item from the list and apply the logic
+            this[i]!!.split(" ").map{
+                list.add(it.lowercase().capitalize())// we first make the word lowercase in case if there is any
+            // capital letter char in the word other than the first index of the word
+            }
+        }
+    }
+
+    return list
+}
